@@ -1,0 +1,22 @@
+{
+  "name": "hourconverter",
+  "version": "1.0.0",
+  "description": "Given a time in 12-hour AM/PM format, convert it to military (24-hour) time.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/hourConverter.js",
+    "dev": "ts-node src/hourConverter.ts",
+    "build": "tsc src/hourConverter"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diegomdevs/hourConverter.git"
+  },
+  "author": "diegomdevs <diegom.develops@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/diegomdevs/hourConverter/issues"
+  },
+  "homepage": "https://github.com/diegomdevs/hourConverter#readme"
+}
