@@ -1,25 +1,16 @@
 "use strict";
 
 function hourConverter(s: string): string {
-  let sConverted: string = "";
-  const hour: number = Number(s[0] + s[1]);
-  let hourConverted: string = "";
-  if (s[8] + s[9] === "AM") {
-    if (s[0] + s[1] === "12") {
-      hourConverted = String(hour - 12);
-      sConverted = s.replace(s[0] + s[1], hourConverted);
-    } else {
-      sConverted = s;
-    }
+  const amOrPm: string = s[8];
+  let militaryHour: string = "";
+  if (amOrPm === "A") {
+    if (s[0] + s[1] === "12") militaryHour = "00";
+    else militaryHour = s[0] + s[1];
+  } else {
+    if (s[0] + s[1] === "12") militaryHour = s[0] + s[1];
+    else militaryHour = String(parseInt(s[0] + s[1], 10) + 12);
   }
-  if (s[8] + s[9] === "PM") {
-    if (s[0] + s[1] !== "12") {
-      hourConverted = String(hour + 12);
-      sConverted = s.replace(s[0] + s[1], hourConverted);
-    } else {
-      sConverted = s;
-    }
-  }
-  return sConverted.replace(s[8] + s[9], "");
+
+  return militaryHour + s.substring(2, 8);
 }
 console.log(hourConverter("07:12:12PM"));
